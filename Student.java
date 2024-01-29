@@ -59,4 +59,22 @@ public class Student {
     public String getSecondName() {
         return secondName;
     }
+
+    // Method to determine the student's workload based on the number of classes
+    public String determineWorkLoad(){
+        switch (numClasses) {
+            case 1:
+                return "Very Light";
+            case 2:
+                return "Light";
+            case 3:
+                return "Part Time";
+            case 4:
+                return "Part Time";
+            case 5:
+                return "Part Time";
+            default:
+                return "Full Time";
+        }
+    }
 }
