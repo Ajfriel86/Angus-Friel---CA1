@@ -55,4 +55,8 @@ public class Student {
         return numClasses >= 1 && numClasses <= 8;
     }
 
+    // Accessor method to get the second name
+    public String getSecondName() {
+        return secondName;
+    }
 }
