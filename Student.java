@@ -40,4 +40,9 @@ public class Student {
         return null;
     }
 
+    // Method to validate the first name
+    private static boolean isValidFirstName(String firstName){
+        return firstName.matches("[a-zA-Z+]");
+    }
+
 }
