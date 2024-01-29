@@ -50,4 +50,9 @@ public class Student {
         return secondName.matches("[a-zA-Z)-9]+");
     }
 
+    // Method to to validate the number of classes
+    private static boolean isValidNumClasses(int numClasses){
+        return numClasses >= 1 && numClasses <= 8;
+    }
+
 }
