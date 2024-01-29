@@ -42,7 +42,12 @@ public class Student {
 
     // Method to validate the first name
     private static boolean isValidFirstName(String firstName){
-        return firstName.matches("[a-zA-Z+]");
+        return firstName.matches("[a-zA-Z]+");
+    }
+
+    // Method to validate second name
+    private static boolean isValidSecondName(String secondName){
+        return secondName.matches("[a-zA-Z)-9]+");
     }
 
 }
