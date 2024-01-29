@@ -62,7 +62,24 @@ public class ProcessStudent{
             }
         }
         catch (IOException | NumberFormatException e){
-            System.out.println("Error while reading file: " + e.getMessage());
+            System.out.println("Error while reading file: " + e.getMessage);
+        }
+    }
+
+    private static void addDataViaConsole(){
+        System.out.println("Enter student data in the following format: ");
+        System.out.println("<First Name> <Second Name> <Number of Classes>");
+
+        String userData = scan.nextLine();
+        Student student = Student.parseStudent(userData);
+
+        if (student != null){
+            String workload = student.determineWorkLoad();
+            writeStatusToFile(student.getStudentNumber(), student.getSecondName(), workload);
+            System.out.println("Data has been saved successfully");
+        }
+        else {
+            System.out.println("Invalid Data");
         }
     }
 }
