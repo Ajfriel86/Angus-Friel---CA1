@@ -31,4 +31,19 @@ public class ProcessStudent{
         }
     }
 
+    private static int getUserChoice() {
+        int choice = -1;
+        while (choice < MenuOptions.STANDARD_OPERATION || choice > MenuOptions.EXIT) {
+            System.out.println("Please enter a choice: ");
+            try{
+                choice = scan.nextInt();
+                scan.nextLine();      
+            }
+            catch (Exception e){
+                System.out.println("Invalid option");
+                scan.nextLine();
+            }
+        }
+        return choice;
+    }
 }
