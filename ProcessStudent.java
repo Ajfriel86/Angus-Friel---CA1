@@ -46,4 +46,23 @@ public class ProcessStudent{
         }
         return choice;
     }
+
+    private static void processStudentData(String fileName){
+        try(BufferedReader read = new BufferedReader(new FileReader(fileName)));{
+            String line;
+            while((line = read.readLine()) !=null){
+                Student student = Student.parseStudent(line);
+                if (student != null){
+                    String workload = student.determinedWorkLoad();
+                    writeStatusToFile(student.getStudentNumber(), student.getSecondName(), workload); 
+                }
+                else {
+                    System.out.println("Invlaid data: " + line);
+                }
+            }
+        }
+        catch (IOException | NumberFormatException e){
+            System.out.println("Error while reading file: " + e.getMessage());
+        }
+    }
 }
