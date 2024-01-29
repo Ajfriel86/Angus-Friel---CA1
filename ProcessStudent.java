@@ -82,4 +82,17 @@ public class ProcessStudent{
             System.out.println("Invalid Data");
         }
     }
+
+    private static void writeStatusToFile(String studentNumber, String secondName, String workload){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(STATUS_FILE, true))){
+            writer.write(studentNumber+ " - " + secondName);
+            writer.newLine();
+            writer.write(workload);
+            writer.newLine();
+            writer.newLine();
+        }
+        catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+    }
 }
